@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminClientDomainTests.cs" />
     <Compile Include="AdminClientSenderSignatureTests.cs" />
     <Compile Include="AdminClientServersTests.cs" />
     <Compile Include="ClientBounceTests.cs" />
