@@ -92,9 +92,10 @@ namespace Postmark.PCL.Tests
         [TestCase]
         public async void AdminClient_CanDeleteDomain()
         {
-            var domain = await _adminClient.CreateDomainAsync("domainToDelete.com");
+            var deleteTestDomain = "delete-" + _domainName;
+            var domain = await _adminClient.CreateDomainAsync(deleteTestDomain);
 
-            var response = await _adminClient.DeleteSignatureAsync(domain.ID);
+            var response = await _adminClient.DeleteDomainAsync(domain.ID);
             Assert.AreEqual(PostmarkStatus.Success, response.Status);
             Assert.AreEqual(0, response.ErrorCode);
         }
@@ -110,16 +111,19 @@ namespace Postmark.PCL.Tests
         [TestCase]
         public async void AdminClient_CanUpdateDomains()
         {
-            var domain = await _adminClient.CreateDomainAsync(_domainName);
+            var updatePrefix = "update-";
+            var updateDomain = updatePrefix + _domainName;
 
-            var prefix = "updated-";
+            var initialReturnPath = "return." + updateDomain;
 
-            var updateResult = await _adminClient.UpdateDomainAsync(domain.ID, prefix + _returnPath);
+            var domain = await _adminClient.CreateDomainAsync(updateDomain, initialReturnPath);
+
+            var updateResult = await _adminClient.UpdateDomainAsync(domain.ID, updatePrefix + initialReturnPath);
 
             var updatedDomain = await _adminClient.GetDomainAsync(domain.ID);
 
             Assert.AreEqual(updateResult.Name, updatedDomain.Name);
-            Assert.AreEqual(prefix + domain.ReturnPathDomain, updatedDomain.ReturnPathDomain);
+            Assert.AreEqual(updatePrefix + domain.ReturnPathDomain, updatedDomain.ReturnPathDomain);
         }
 
         [TestCase]
@@ -134,7 +138,8 @@ namespace Postmark.PCL.Tests
         [TestCase]
         public async void AdminClient_CanVerifySPF()
         {
-            var domain = await _adminClient.CreateDomainAsync(_domainName);
+            var spfDomainName = "spf-verify-" + _domainName;
+            var domain = await _adminClient.CreateDomainAsync(spfDomainName);
             var response = await _adminClient.VerifyDomainSPF(domain.ID);
             Assert.NotNull(response);
         }
