@@ -1,0 +1,217 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.4</TargetFramework>
+    <PackageId>Postmark.NetStandard</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Authors>Wildbit</Authors>
+    <Description>Leave transactional email delivery to the experts</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Copyright>Copyright © Wildbit 2017</Copyright>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+    <NoWarn>1591;1701;1702;1705</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;1705</NoWarn>
+    <DocumentationFile>bin\Release\netstandard1.4\Postmark.xml</DocumentationFile>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <None Include="key.snk" />
+  </ItemGroup>
+
+	<ItemGroup>
+    <Compile Include="..\Postmark\Converters\UnicodeJsonStringConverter.cs">
+      <Link>Converters\UnicodeJsonStringConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\InboundMessageStatus.cs">
+      <Link>Model\InboundMessageStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\LinkTrackingOptions.cs">
+      <Link>Model\LinkTrackingOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\OutboundMessageStatus.cs">
+      <Link>Model\OutboundMessageStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkBaseSenderSignature.cs">
+      <Link>Model\PostmarkBaseSenderSignature.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkBounce.cs">
+      <Link>Model\PostmarkBounce.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkBounceActivation.cs">
+      <Link>Model\PostmarkBounceActivation.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkBounceDump.cs">
+      <Link>Model\PostmarkBounceDump.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkBounces.cs">
+      <Link>Model\PostmarkBounces.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkBounceSummary.cs">
+      <Link>Model\PostmarkBounceSummary.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkBounceType.cs">
+      <Link>Model\PostmarkBounceType.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkBounceWebhookMessage.cs">
+      <Link>Model\PostmarkBounceWebhookMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkCompleteSenderSignature.cs">
+      <Link>Model\PostmarkCompleteSenderSignature.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkDeliveryStats.cs">
+      <Link>Model\PostmarkDeliveryStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkDeliveryWebhookMessage.cs">
+      <Link>Model\PostmarkDeliveryWebhookMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkInboundMessage.cs">
+      <Link>Model\PostmarkInboundMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkInboundMessageList.cs">
+      <Link>Model\PostmarkInboundMessageList.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkInboundRuleTriggerInfo.cs">
+      <Link>Model\PostmarkInboundRuleTriggerInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkInboundRuleTriggerList.cs">
+      <Link>Model\PostmarkInboundRuleTriggerList.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkInboundWebhookMessage.cs">
+      <Link>Model\PostmarkInboundWebhookMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkMessageAttachment.cs">
+      <Link>Model\PostmarkMessageAttachment.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkOpensList.cs">
+      <Link>Model\PostmarkOpensList.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkOpenWebhookMessage.cs">
+      <Link>Model\PostmarkOpenWebhookMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkOutboundBounceStats.cs">
+      <Link>Model\PostmarkOutboundBounceStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkOutboundClientStats.cs">
+      <Link>Model\PostmarkOutboundClientStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkOutboundMessagesList.cs">
+      <Link>Model\PostmarkOutboundMessagesList.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkOutboundOpenStats.cs">
+      <Link>Model\PostmarkOutboundOpenStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkOutboundOverviewStats.cs">
+      <Link>Model\PostmarkOutboundOverviewStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkOutboundPlatformStats.cs">
+      <Link>Model\PostmarkOutboundPlatformStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkOutboundReadStats.cs">
+      <Link>Model\PostmarkOutboundReadStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkOutboundSentStats.cs">
+      <Link>Model\PostmarkOutboundSentStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkOutboundSpamComplaintStats.cs">
+      <Link>Model\PostmarkOutboundSpamComplaintStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkOutboundTrackedStats.cs">
+      <Link>Model\PostmarkOutboundTrackedStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkResponse.cs">
+      <Link>Model\PostmarkResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkSenderSignatureList.cs">
+      <Link>Model\PostmarkSenderSignatureList.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkServer.cs">
+      <Link>Model\PostmarkServer.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkServerList.cs">
+      <Link>Model\PostmarkServerList.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkStatus.cs">
+      <Link>Model\PostmarkStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkTaggedTriggerInfo.cs">
+      <Link>Model\PostmarkTaggedTriggerInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark\Model\PostmarkTaggedTriggerList.cs">
+      <Link>Model\PostmarkTaggedTriggerList.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark.PCL\Converters\HeaderCollectionConverter.cs">
+      <Link>Converters\HeaderCollectionConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark.PCL\Converters\JsonNetExtensions.cs">
+      <Link>Converters\JsonNetExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark.PCL\Exceptions\PostmarkValidationException.cs">
+      <Link>Exceptions\PostmarkValidationException.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark.PCL\ISimpleHttpClient.cs">
+      <Link>ISimpleHttpClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark.PCL\LegacyPortableClientExtensions.cs">
+      <Link>LegacyPortableClientExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark.PCL\Model\HeaderCollection.cs">
+      <Link>Model\HeaderCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark.PCL\Model\PostmarkMessage.cs">
+      <Link>Model\PostmarkMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark.PCL\Model\PostmarkMessageBase.cs">
+      <Link>Model\PostmarkMessageBase.c</Link>
+    </Compile>
+    <Compile Include="..\Postmark.PCL\Model\PostmarkTemplate.cs">
+      <Link>Model\PostmarkTemplate.c</Link>
+    </Compile>
+    <Compile Include="..\Postmark.PCL\Model\PostmarkTemplateListingResponse.cs">
+      <Link>Model\PostmarkTemplateListingResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark.PCL\Model\TemplatedPostmarkMessage.cs">
+      <Link>Model\TemplatedPostmarkMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark.PCL\Model\TemplateValidationResponse.cs">
+      <Link>Model\TemplateValidationResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark.PCL\PostmarkAdminClient.cs">
+      <Link>PostmarkAdminClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark.PCL\PostmarkClient.cs">
+      <Link>PostmarkClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark.PCL\PostmarkClientBase.cs">
+      <Link>PostmarkClientBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark.PCL\PostmarkClientExtensions.cs">
+      <Link>PostmarkClientExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark.PCL\SimpleHttpClient.cs">
+      <Link>SimpleHttpClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark.PCL\TaskExtensions.cs">
+      <Link>TaskExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Postmark.PCL\Utility\JsonContent.cs">
+      <Link>Utility\JsonContent.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\Postmark.PCL\FodyWeavers.xml">
+      <Link>FodyWeavers.xml</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+  </ItemGroup>
+
+</Project>
