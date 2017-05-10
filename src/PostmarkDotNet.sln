@@ -32,8 +32,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4DB909
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Postmark.NetStandard", "Postmark.NetStandard\Postmark.NetStandard.csproj", "{56DAB960-63E1-4696-811C-17BCAE5FE3C6}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,18 +98,6 @@ Global
 		{54B77A3B-4C90-41FC-B7BE-707334888401}.Release|Any CPU.Build.0 = Release|Any CPU
 		{54B77A3B-4C90-41FC-B7BE-707334888401}.Release|ARM.ActiveCfg = Release|Any CPU
 		{54B77A3B-4C90-41FC-B7BE-707334888401}.Release|x86.ActiveCfg = Release|Any CPU
-		{56DAB960-63E1-4696-811C-17BCAE5FE3C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{56DAB960-63E1-4696-811C-17BCAE5FE3C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{56DAB960-63E1-4696-811C-17BCAE5FE3C6}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{56DAB960-63E1-4696-811C-17BCAE5FE3C6}.Debug|ARM.Build.0 = Debug|Any CPU
-		{56DAB960-63E1-4696-811C-17BCAE5FE3C6}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{56DAB960-63E1-4696-811C-17BCAE5FE3C6}.Debug|x86.Build.0 = Debug|Any CPU
-		{56DAB960-63E1-4696-811C-17BCAE5FE3C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{56DAB960-63E1-4696-811C-17BCAE5FE3C6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{56DAB960-63E1-4696-811C-17BCAE5FE3C6}.Release|ARM.ActiveCfg = Release|Any CPU
-		{56DAB960-63E1-4696-811C-17BCAE5FE3C6}.Release|ARM.Build.0 = Release|Any CPU
-		{56DAB960-63E1-4696-811C-17BCAE5FE3C6}.Release|x86.ActiveCfg = Release|Any CPU
-		{56DAB960-63E1-4696-811C-17BCAE5FE3C6}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

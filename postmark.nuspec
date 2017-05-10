@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <metadata>
-    <id>Postmark</id>
-    <version>2.0.100-dev</version>
+    <id>Postmark-netstd</id>
+    <version>2.0.103-dev</version>
     <authors>Daniel Crenna, JP Toto, Andrew Theken</authors>
     <owners>Wildbit</owners>
     <description>
@@ -37,18 +37,18 @@
       <group targetFramework="net45">
         <dependency id="Newtonsoft.Json" version="6.0.6" />
       </group>
-      <group>
-        <dependency id="Newtonsoft.Json" version="6.0.6" />
+      <group targetFramework="netstandard1.1">
+		<dependency id="NETStandard.Library" version="1.6.1" />
+        <dependency id="Newtonsoft.Json" version="9.0.1" />
       </group>
     </dependencies>
   </metadata>
   <files>
     <file src="LICENSE" target="LICENSE" />
     <!--<file src="src\init.ps1" target="tools\init.ps1" />-->
-    <file src="src\Postmark.PCL\bin\Release\Postmark*.*" target="lib\portable-net45+wp80+win8+wpa81+aspnetcore50" />
+    <file src="src\Postmark.PCL\bin\Release\Postmark*.*" target="lib\netstandard1.1" />
     <!-- The PCL def should handle this, but VS wants to bring in the 4.0 version (1.x) -->
     <file src="src\Postmark.Convenience\bin\Release\Postmark*.*" target="lib\net45" />
-    <file src="src\Postmark.PCL\bin\Release\Postmark*.*" target="lib\Xamarin.iOS10" />
     <file src="bin\lib\**\Postmark*.*" target="lib" />
   </files>
 </package>

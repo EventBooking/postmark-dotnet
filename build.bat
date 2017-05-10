@@ -1,1 +1,1 @@
-%WINDIR%\Microsoft.NET\Framework\v4.0.30319\msbuild.exe src\PostmarkDotNet.sln /t:Clean,Rebuild /p:Configuration=Release /fileLogger
+"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\msbuild" src\PostmarkDotNet.sln /t:Clean,Rebuild /p:Configuration=Release /fileLogger
